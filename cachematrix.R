@@ -1,4 +1,4 @@
-## cachematrix.R are two complementary functions that cache the inverse of a matrix,
+## cachematrix.R contains two complementary functions that cache the inverse of a matrix,
 ## and they can also calculate the inverse of an existing matrix, display it, and cache it for easier
 ## retrieval.  
 
