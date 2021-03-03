@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## cachematrix.R are two complementary functions that cache the inverse of a matrix,
+## and they can also calculate the inverse of an existing matrix, display it, and cache it for easier
+## retrieval.  
 
-## Write a short comment describing this function
+## makeCacheMatrix takes an existing matrix as an argument (if none are given, it defaults to a 1X1 matrix),
+## and returns a data frame of functions that can store the argument for future use, replace the argument
+## for another matrix, store the inverse of the argument, and set the inverse of the argument. 
 
 makeCacheMatrix <- function(x = matrix()) {
      In <- matrix()
@@ -20,13 +23,14 @@ makeCacheMatrix <- function(x = matrix()) {
           return(In)
      }
      frame$FuncNames <- c(setMx,getMx,setIn,getIn)
-     frame
+     return(frame)
      
      
 }
 
 
-## Write a short comment describing this function
+## cacheSolve takes makeCacheMatrix and either retrieves the cached inverse of a matrix,
+## or it calculates the inverse of the matrix stored in the returned data frame from makeCacheMatrix. 
 
 cacheSolve <- function(x, ...) {
      In <- x[["getIn","FuncNames"]]()
